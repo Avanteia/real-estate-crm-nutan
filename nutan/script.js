@@ -1,65 +1,85 @@
-const counters = document.querySelectorAll(".counter");
+// Smooth Scroll for Navigation Links
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function (e) {
 
-counters.forEach(counter => {
+        const target = this.getAttribute("href");
 
-const update = () => {
+        if (target.startsWith("#")) {
+            e.preventDefault();
 
-const target = +counter.getAttribute("data-target");
+            document.querySelector(target).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
 
-const count = +counter.innerText;
+// View Details Button
+const buttons = document.querySelectorAll(".card button");
 
-const increment = target / 100;
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        alert("Property details page will be added in the next module.");
+    });
+});
 
-if(count < target){
+// Contact Form
+const form = document.querySelector("form");
 
-counter.innerText = Math.ceil(count + increment);
+form.addEventListener("submit", function (e) {
 
-setTimeout(update,20);
+    e.preventDefault();
 
-}
+    alert("Thank you! Your message has been sent successfully.");
 
-else{
-
-counter.innerText = target;
-
-}
-
-}
-
-update();
+    form.reset();
 
 });
 
-window.addEventListener("scroll",()=>{
+// Scroll to Top Button
+const topBtn = document.createElement("button");
 
-document.querySelectorAll(".reveal").forEach(el=>{
+topBtn.innerHTML = "⬆";
 
-const top=el.getBoundingClientRect().top;
+topBtn.id = "topBtn";
 
-const windowHeight=window.innerHeight;
+document.body.appendChild(topBtn);
 
-if(top<windowHeight-100){
+topBtn.style.position = "fixed";
+topBtn.style.bottom = "20px";
+topBtn.style.right = "20px";
+topBtn.style.padding = "12px 15px";
+topBtn.style.fontSize = "18px";
+topBtn.style.border = "none";
+topBtn.style.borderRadius = "50%";
+topBtn.style.background = "#2563eb";
+topBtn.style.color = "#fff";
+topBtn.style.cursor = "pointer";
+topBtn.style.display = "none";
+topBtn.style.boxShadow = "0 5px 10px rgba(0,0,0,.3)";
 
-el.classList.add("active");
+window.addEventListener("scroll", () => {
 
-}
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 });
 
-});
+// Welcome Message
+window.onload = () => {
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    console.log("Welcome to Real Estate CRM");
 
-anchor.addEventListener("click",function(e){
-
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-});
-
-});
+};
