@@ -1,85 +1,192 @@
-// Smooth Scroll for Navigation Links
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", function (e) {
+// DATABASE
+let db = JSON.parse(localStorage.getItem("estateCRM")) || {
 
-        const target = this.getAttribute("href");
+    properties: [
+        { 
+            id: 1, 
+            title: "Luxury 3BHK Apartment", 
+            type: "Residential", 
+            price: 150000, 
+            location: "Math, Maharashtra", 
+            status: "Available", 
+            img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400" 
+        },
 
-        if (target.startsWith("#")) {
-            e.preventDefault();
+        { 
+            id: 2, 
+            title: "Office Space", 
+            type: "Commercial", 
+            price: 500000, 
+            location: "Pune", 
+            status: "Available", 
+            img: "https://images.unsplash.com/photo-1497366811353-6870744d04a2?w=400" 
+        }
+    ],
 
-            document.querySelector(target).scrollIntoView({
-                behavior: "smooth"
-            });
+    leads: [
+        { 
+            id: 1, 
+            name: "Amit Sharma", 
+            phone: "9876543210", 
+            source: "Website", 
+            status: "New" 
+        }
+    ],
+
+    visits: [],
+
+    deals: []
+};
+
+// SAVE DATA
+const save = () => {
+    localStorage.setItem("estateCRM", JSON.stringify(db));
+};
+
+// PAGE SWITCHING
+function showAdmin() {
+    document.getElementById("publicPages").classList.add("hidden");
+    document.getElementById("publicNav").classList.add("hidden");
+    document.getElementById("adminPanel").classList.remove("hidden");
+    renderAdmin();
+}
+
+function showPublic() {
+    document.getElementById("publicPages").classList.remove("hidden");
+    document.getElementById("publicNav").classList.remove("hidden");
+    document.getElementById("adminPanel").classList.add("hidden");
+    renderPublic();
+}
+
+function showPublicPage(id) {
+    document.querySelectorAll(".public-page").forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+// ADMIN NAVIGATION
+document.querySelectorAll(".nav-link").forEach(btn => {
+    btn.onclick = () => {
+        document.querySelectorAll(".nav-link").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        document.querySelectorAll(".admin-page").forEach(p => p.classList.remove("active"));
+        document.getElementById(btn.dataset.target).classList.add("active");
+
+        document.getElementById("adminTitle").innerText = btn.innerText.replace(/[^a-zA-Z ]/g, "");
+    };
+});
+
+// RENDER ADMIN DATA
+function renderAdmin() {
+    document.getElementById("sLeads").innerText = db.leads.length;
+    document.getElementById("sVisits").innerText = db.visits.length;
+    document.getElementById("sDeals").innerText = db.deals.length;
+    document.getElementById("sRevenue").innerText = "$" + db.deals.reduce((a, b) => a + b.amount, 0);
+
+    // Properties
+    let propHTML = "";
+    db.properties.forEach(p => {
+        propHTML += `
+            <div class="property-card">
+                <img src="${p.img}" alt="">
+
+                <div class="property-body">
+                    <h4>${p.title}</h4>
+                    <p>📍 ${p.location} • ${p.type}</p>
+                    <div class="property-price">$${p.price}</div>
+                </div>
+            </div>
+        `;
+    });
+    document.getElementById("propertyList").innerHTML = propHTML;
+
+    // Leads
+    let leadHTML = "";
+    db.leads.forEach(l => {
+        leadHTML += `
+            <tr>
+                <td>${l.name}</td>
+                <td>${l.phone}</td>
+                <td>${l.source}</td>
+                <td>${l.status}</td>
+                <td><button class="btn">Follow Up</button></td>
+            </tr>
+        `;
+    });
+    document.getElementById("leadBody").innerHTML = leadHTML;
+
+    // Charts
+    new Chart(document.getElementById("pipelineChart"), {
+        type: "doughnut",
+        data: { 
+            labels: ["New", "Follow-up", "Interested", "Closed"], 
+            datasets: [{ 
+                data: [4, 2, 3, 1], 
+                backgroundColor: ["#3b82f6", "#f97316", "#8b5cf6", "#10b981"] 
+            }] 
         }
     });
-});
+}
 
-// View Details Button
-const buttons = document.querySelectorAll(".card button");
+// RENDER PUBLIC SITE
+function renderPublic() {
+    let propHTML = "";
+    db.properties.forEach(p => {
+        propHTML += `
+            <div class="property-card">
+                <img src="${p.img}" alt="">
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        alert("Property details page will be added in the next module.");
+                <div class="property-body">
+                    <h4>${p.title}</h4>
+                    <p>📍 ${p.location}</p>
+                    <div class="property-price">$${p.price}</div>
+                    <button class="btn btn-primary" style="margin-top:10px;width:100%">
+                        Request Site Visit
+                    </button>
+                </div>
+            </div>
+        `;
     });
-});
+    document.getElementById("publicPropertyList").innerHTML = propHTML;
+}
 
-// Contact Form
-const form = document.querySelector("form");
+function searchProperties() {
+    showPublicPage('listings');
+    renderPublic();
+}
 
-form.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    alert("Thank you! Your message has been sent successfully.");
-
-    form.reset();
-
-});
-
-// Scroll to Top Button
-const topBtn = document.createElement("button");
-
-topBtn.innerHTML = "⬆";
-
-topBtn.id = "topBtn";
-
-document.body.appendChild(topBtn);
-
-topBtn.style.position = "fixed";
-topBtn.style.bottom = "20px";
-topBtn.style.right = "20px";
-topBtn.style.padding = "12px 15px";
-topBtn.style.fontSize = "18px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.background = "#2563eb";
-topBtn.style.color = "#fff";
-topBtn.style.cursor = "pointer";
-topBtn.style.display = "none";
-topBtn.style.boxShadow = "0 5px 10px rgba(0,0,0,.3)";
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-// Welcome Message
-window.onload = () => {
-
-    console.log("Welcome to Real Estate CRM");
-
+// MODAL
+document.getElementById("addBtn").onclick = () => {
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("modalContent").innerHTML = `
+        <h3>Add New Property</h3>
+        <br>
+        <input id="t" placeholder="Title" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid var(--border);border-radius:8px">
+        <input id="p" placeholder="Price" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid var(--border);border-radius:8px">
+        <button class="btn btn-primary" onclick="addProp()">Save</button>
+    `;
 };
+
+document.getElementById("closeModal").onclick = () => {
+    document.getElementById("modal").classList.add("hidden");
+};
+
+function addProp() {
+    db.properties.push({
+        id: Date.now(),
+        title: document.getElementById("t").value,
+        price: document.getElementById("p").value,
+        type: "Residential",
+        location: "Math, Maharashtra",
+        status: "Available",
+        img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400"
+    });
+
+    save();
+    renderAdmin();
+    renderPublic();
+    document.getElementById("modal").classList.add("hidden");
+}
+
+// INITIAL LOAD
+renderPublic();
