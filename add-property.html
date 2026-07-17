@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EstateCRM | Add Property</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="brand"> EstateCRM</div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="properties.html" class="nav-link"> Properties</a>
+                <a href="add-property.html" class="nav-link active"> Add Property</a>
+            </nav>
+        </aside>
+
+        <div class="content">
+            
+            <header class="topbar">
+                <h1>Add New Property</h1>
+            </header>
+
+            <div class="card">
+                
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label>Property Title</label>
+                        <input type="text" placeholder="Luxury 3BHK">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" placeholder="150000">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" placeholder="Pune, Maharashtra">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select>
+                            <option>Residential</option>
+                            <option>Commercial</option>
+                            <option>Plot</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Area (sqft)</label>
+                        <input type="number" placeholder="1200">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select>
+                            <option>Available</option>
+                            <option>Sold</option>
+                            <option>Reserved</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Photos</label>
+                    <input type="file" multiple>
+                </div>
+
+                <button class="btn btn-primary">Save Property</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstateCRM | Reports</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="brand"> EstateCRM</div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link"> Dashboard</a>
+                <a href="reports.html" class="nav-link active"> Reports</a>
+            </nav>
+        </aside>
+
+        <div class="content">
+            
+            <header class="topbar">
+                <h1>Reports & Analytics</h1>
+                <button class="btn">Export to PDF</button>
+            </header>
+
+            <div class="card">
+                <h3>Lead Conversion Rate</h3>
+                <canvas id="reportChart"></canvas>
+            </div>
+
+            <div class="table-card" style="margin-top: 24px;">
+                <h3>Agent-wise Performance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Agent Name</th>
+                            <th>Leads</th>
+                            <th>Visits</th>
+                            <th>Deals Closed</th>
+                            <th>Commission</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Amit</td>
+                            <td>15</td>
+                            <td>10</td>
+                            <td>6</td>
+                            <td>$3000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
