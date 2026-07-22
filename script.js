@@ -20,8 +20,42 @@ let db = {
             price: 500000, 
             location: "Mumbai", 
             amenities: "AC, WiFi, 1000sqft",
-            img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=40https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhFmkGVwxChoMZywe2Wm3LxeTtxXKtiNLc-PqJfo_0pCUVScMQQ11f7z8&s=10" 
-        }
+            img: "https://i.pinimg.com/736x/a0/79/98/a079983a64c162f4c70e541e88ed5ba3.jpg" 
+        },
+
+        
+        { 
+            id: 2, 
+            title: "Office Space", 
+            type: "Commercial",
+            price: 500000, 
+            location: "Mumbai", 
+            amenities: "AC, WiFi, 1000sqft",
+            img: "https://i.pinimg.com/1200x/89/6d/89/896d8981f08cff11ee47983b746e336a.jpg" 
+        },
+
+         { 
+            id: 2, 
+            title: "Office Space", 
+            type: "Commercial",
+            price: 500000, 
+            location: "Mumbai", 
+            amenities: "AC, WiFi, 1000sqft",
+            img: "https://i.pinimg.com/736x/e8/52/df/e852df98473b723c75ed0458b5f1c5a4.jpg" 
+        },
+
+         { 
+            id: 2, 
+            title: "Office Space", 
+            type: "Commercial",
+            price: 500000, 
+            location: "Mumbai", 
+            amenities: "AC, WiFi, 1000sqft",
+            img: "https://i.pinimg.com/736x/1c/28/5a/1c285ab71aa4aebebcb44b685b82dd87.jpg" 
+        },
+
+
+
 
     ],
 
