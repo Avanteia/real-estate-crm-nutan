@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EstateCRM | My Tasks</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    
+    <title>EstateCRM | Deals</title>
 
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
+
     <div class="layout">
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
-            <div class="brand">
-                EstateCRM
-            </div>
-
+            <div class="brand">EstateCRM</div>
             <nav class="nav">
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
                 <a href="properties.html" class="nav-link">Properties</a>
                 <a href="add-property.html" class="nav-link">Add Property</a>
                 <a href="leads.html" class="nav-link">Leads</a>
-                <a href="visits.html" class="nav-link">Site Visits</a>
-                <a href="deals.html" class="nav-link">Deals</a>
-                <a href="tasks.html" class="nav-link active">My Tasks</a>
+                <a href="deals.html" class="nav-link active">Deals</a>
                 <a href="reports.html" class="nav-link">Reports</a>
                 <a href="index.html" class="nav-link">Client Portal</a>
             </nav>
@@ -32,42 +29,144 @@
 
         <!-- MAIN CONTENT -->
         <div class="content">
+            
             <header class="topbar">
-                <h1>My Tasks</h1>
+                <h1>Closed Deals: 12 This Month</h1>
+                <button class="btn btn-primary">+ Add Deal</button>
             </header>
 
-            <div class="card">
-                <h3>Today's Tasks</h3>
+            <!-- DEAL STATS -->
+            <div class="stat-grid">
+                
+                <div class="stat-card green">
+                    <h4>Total Revenue</h4>
+                    <p>₹18.5 Cr</p>
+                </div>
 
-                <div class="activity-list">
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Call Lead:</b> Follow up with Priya Sharma</p>
-                        <span class="time">High Priority</span>
+                <div class="stat-card blue">
+                    <h4>Avg Deal Value</h4>
+                    <p>₹1.54 Cr</p>
+                </div>
+
+                <div class="stat-card purple">
+                    <h4>Top Agent</h4>
+                    <p>Amit Kumar</p>
+                </div>
+
+            </div>
+
+            <!-- ALL DEALS SECTION -->
+            <h2 class="section-title" style="margin-top: 40px;">Recent <span>Deals</span></h2>
+
+            <div class="property-grid">
+
+                <!-- DEAL 1 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D001</h3>
+                        <span class="badge badge-green">Closed</span>
                     </div>
-
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Site Visit:</b> 3BHK Wakad with Vijay Patil</p>
-                        <span class="time">3:00 PM</span>
-                    </div>
-
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Send Proposal:</b> Office Space to Rahul Verma</p>
-                        <span class="time">Due Today</span>
-                    </div>
-
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Update Deal:</b> Close Karan Mehta deal</p>
-                        <span class="time">Tomorrow</span>
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800" alt="Property">
+                    <div class="deal-body">
+                        <h4>Luxury 3BHK Villa</h4>
+                        <p>Client: Rahul Verma</p>
+                        <p>Agent: Amit Kumar</p>
+                        <p>Location: Baner, Pune</p>
+                        <p class="price">Deal Value: ₹1.85 Cr</p>
+                        <p class="date">Closed On: 15 July 2026</p>
                     </div>
                 </div>
+
+                <!-- DEAL 2 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D002</h3>
+                        <span class="badge badge-green">Closed</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800" alt="Property">
+                    <div class="deal-body">
+                        <h4>Modern 2BHK Flat</h4>
+                        <p>Client: Neha Singh</p>
+                        <p>Agent: Sneha Patil</p>
+                        <p>Location: Wakad, Pune</p>
+                        <p class="price">Deal Value: ₹95 L</p>
+                        <p class="date">Closed On: 12 July 2026</p>
+                    </div>
+                </div>
+
+                <!-- DEAL 3 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D003</h3>
+                        <span class="badge badge-green">Closed</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800" alt="Property">
+                    <div class="deal-body">
+                        <h4>Premium 4BHK Penthouse</h4>
+                        <p>Client: Amit Kumar</p>
+                        <p>Agent: Amit Kumar</p>
+                        <p>Location: Koregaon Park, Pune</p>
+                        <p class="price">Deal Value: ₹3.2 Cr</p>
+                        <p class="date">Closed On: 10 July 2026</p>
+                    </div>
+                </div>
+
+                <!-- DEAL 4 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D004</h3>
+                        <span class="badge badge-green">Closed</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800" alt="Property">
+                    <div class="deal-body">
+                        <h4>Cozy 1BHK Apartment</h4>
+                        <p>Client: Sneha Patil</p>
+                        <p>Agent: Rohit Deshmukh</p>
+                        <p>Location: Hinjewadi, Pune</p>
+                        <p class="price">Deal Value: ₹45 L</p>
+                        <p class="date">Closed On: 08 July 2026</p>
+                    </div>
+                </div>
+
+                <!-- DEAL 5 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D005</h3>
+                        <span class="badge badge-green">Closed</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=800" alt="Property">
+                    <div class="deal-body">
+                        <h4>Farmhouse with Plot</h4>
+                        <p>Client: Vikram Joshi</p>
+                        <p>Agent: Priya Sharma</p>
+                        <p>Location: Lonavala</p>
+                        <p class="price">Deal Value: ₹2.5 Cr</p>
+                        <p class="date">Closed On: 05 July 2026</p>
+                    </div>
+                </div>
+
+                <!-- DEAL 6 -->
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Deal #D006</h3>
+                        <span class="badge badge-green">Closed</span>
+                    </div>
+                    <img src="https://i.pinimg.com/1200x/5c/d7/d5/5cd7d599540490f2e036eaeeaa020f66.jpg" alt="Property">
+                    <div class="deal-body">
+                        <h4>Commercial Office Space</h4>
+                        <p>Client: Karan Malhotra</p>
+                        <p>Agent: Amit Kumar</p>
+                        <p>Location: Magarpatta, Pune</p>
+                        <p class="price">Deal Value: ₹1.1 Cr</p>
+                        <p class="date">Closed On: 03 July 2026</p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
     </div>
+
 </body>
 </html>

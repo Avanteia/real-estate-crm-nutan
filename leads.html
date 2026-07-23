@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>EstateCRM | Leads</title>
+
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="layout">
 
+        <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="brand">EstateCRM</div>
             <nav class="nav">
@@ -16,58 +21,180 @@
                 <a href="properties.html" class="nav-link">Properties</a>
                 <a href="add-property.html" class="nav-link">Add Property</a>
                 <a href="leads.html" class="nav-link active">Leads</a>
-                <a href="visits.html" class="nav-link">Site Visits</a>
                 <a href="deals.html" class="nav-link">Deals</a>
-                <a href="tasks.html" class="nav-link">My Tasks</a>
                 <a href="reports.html" class="nav-link">Reports</a>
                 <a href="index.html" class="nav-link">Client Portal</a>
             </nav>
         </aside>
 
+        <!-- MAIN CONTENT -->
         <div class="content">
+            
             <header class="topbar">
-                <h1>Leads</h1>
+                <h1>Total Leads: 24</h1>
+                <button class="btn btn-primary">+ Add Lead</button>
             </header>
 
-            <div class="card">
-                <h3>All Active Leads</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Requirement</th>
-                            <th>Budget</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Priya Sharma</td>
-                            <td>9876543210</td>
-                            <td>3BHK Flat, Pune</td>
-                            <td>₹1 Cr</td>
-                            <td><span class="badge badge-blue">New</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vijay Patil</td>
-                            <td>9876543211</td>
-                            <td>Office Space</td>
-                            <td>₹2.5 Cr</td>
-                            <td><span class="badge badge-orange">Contacted</span></td>
-                        </tr>
-                        <tr>
-                            <td>Anita Deshmukh</td>
-                            <td>9876543212</td>
-                            <td>Plot, Nagpur</td>
-                            <td>₹50 L</td>
-                            <td><span class="badge badge-green">Qualified</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- LEAD STATS -->
+            <div class="stat-grid">
+                
+                <div class="stat-card blue">
+                    <h4>New Leads</h4>
+                    <p>8</p>
+                </div>
+
+                <div class="stat-card purple">
+                    <h4>In Progress</h4>
+                    <p>12</p>
+                </div>
+
+                <div class="stat-card green">
+                    <h4>Converted</h4>
+                    <p>4</p>
+                </div>
+
+            </div>
+
+            <!-- ALL LEADS SECTION -->
+            <h2 class="section-title" style="margin-top: 40px;">All <span>Leads</span></h2>
+
+            <div class="property-grid">
+
+                <!-- LEAD 1 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Rahul Verma</h3>
+                        <p>Phone: +91 98765 43210</p>
+                        <p>Property: Luxury 3BHK Villa</p>
+                        <p>Location: Baner, Pune</p>
+                        <p class="price">Budget: ₹2 Cr</p>
+                        <span class="badge badge-blue">In Progress</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 2 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Neha Singh</h3>
+                        <p>Phone: +91 87654 32109</p>
+                        <p>Property: Modern 2BHK Flat</p>
+                        <p>Location: Wakad, Pune</p>
+                        <p class="price">Budget: ₹1 Cr</p>
+                        <span class="badge badge-green">Converted</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 3 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Amit Kumar</h3>
+                        <p>Phone: +91 76543 21098</p>
+                        <p>Property: Premium 4BHK Penthouse</p>
+                        <p>Location: Koregaon Park, Pune</p>
+                        <p class="price">Budget: ₹3.5 Cr</p>
+                        <span class="badge badge-blue">New Lead</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 4 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Sneha Patil</h3>
+                        <p>Phone: +91 65432 10987</p>
+                        <p>Property: Cozy 1BHK Apartment</p>
+                        <p>Location: Hinjewadi, Pune</p>
+                        <p class="price">Budget: ₹50 L</p>
+                        <span class="badge badge-blue">In Progress</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 5 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Vikram Joshi</h3>
+                        <p>Phone: +91 54321 09876</p>
+                        <p>Property: Farmhouse with Plot</p>
+                        <p>Location: Lonavala</p>
+                        <p class="price">Budget: ₹3 Cr</p>
+                        <span class="badge badge-green">Converted</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 6 -->
+                <div class="property-card">
+                    <img src="https://i.pinimg.com/1200x/5c/d7/d5/5cd7d599540490f2e036eaeeaa020f66.jpg" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Priya Sharma</h3>
+                        <p>Phone: +91 43210 98765</p>
+                        <p>Property: Commercial Office Space</p>
+                        <p>Location: Magarpatta, Pune</p>
+                        <p class="price">Budget: ₹1.2 Cr</p>
+                        <span class="badge badge-blue">New Lead</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 7 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Rohit Deshmukh</h3>
+                        <p>Phone: +91 32109 87654</p>
+                        <p>Property: Residential Plot 2000 sqft</p>
+                        <p>Location: Wagholi, Pune</p>
+                        <p class="price">Budget: ₹70 L</p>
+                        <span class="badge badge-blue">In Progress</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 8 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Anjali Mehta</h3>
+                        <p>Phone: +91 21098 76543</p>
+                        <p>Property: Luxury Duplex 3BHK</p>
+                        <p>Location: Viman Nagar, Pune</p>
+                        <p class="price">Budget: ₹1.6 Cr</p>
+                        <span class="badge badge-green">Converted</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 9 -->
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Karan Malhotra</h3>
+                        <p>Phone: +91 10987 65432</p>
+                        <p>Property: Studio Apartment</p>
+                        <p>Location: Kharadi, Pune</p>
+                        <p class="price">Budget: ₹40 L</p>
+                        <span class="badge badge-blue">New Lead</span>
+                    </div>
+                </div>
+
+                <!-- LEAD 10 -->
+                <div class="property-card">
+                    <img src="https://i.pinimg.com/736x/6f/3e/d7/6f3ed7b4962bbefb4e795d7d20763429.jpg" alt="Property Image">
+                    <div class="property-info">
+                        <h3>Pooja Gupta</h3>
+                        <p>Phone: +91 99887 76655</p>
+                        <p>Property: Beach Facing Bungalow</p>
+                        <p>Location: Alibaug</p>
+                        <p class="price">Budget: ₹5 Cr</p>
+                        <span class="badge badge-blue">In Progress</span>
+                    </div>
+                </div>
+
             </div>
 
         </div>
+
     </div>
+
 </body>
 </html>

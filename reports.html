@@ -1,66 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>EstateCRM | Reports</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
 
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <div class="layout">
 
+        <!-- SIDEBAR -->
         <aside class="sidebar">
-            <div class="brand"> EstateCRM</div>
+            <div class="brand">EstateCRM</div>
             <nav class="nav">
-                <a href="dashboard.html" class="nav-link"> Dashboard</a>
-                <a href="reports.html" class="nav-link active"> Reports</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="properties.html" class="nav-link">Properties</a>
+                <a href="add-property.html" class="nav-link">Add Property</a>
+                <a href="leads.html" class="nav-link">Leads</a>
+                <a href="deals.html" class="nav-link">Deals</a>
+                <a href="reports.html" class="nav-link active">Reports</a>
+                <a href="index.html" class="nav-link">Client Portal</a>
             </nav>
         </aside>
 
+        <!-- MAIN CONTENT -->
         <div class="content">
             
             <header class="topbar">
-                <h1>Reports & Analytics</h1>
-                <button class="btn">Export to PDF</button>
+                <h1>Performance Reports</h1>
+                <button class="btn btn-outline">Export Report</button>
             </header>
 
-            <div class="card">
-                <h3>Lead Conversion Rate</h3>
-                <canvas id="reportChart"></canvas>
+            <!-- REPORT STATS -->
+            <div class="stat-grid">
+                
+                <div class="stat-card blue">
+                    <h4>Total Properties</h4>
+                    <p>142</p>
+                </div>
+
+                <div class="stat-card purple">
+                    <h4>Total Leads</h4>
+                    <p>340</p>
+                </div>
+
+                <div class="stat-card green">
+                    <h4>Conversion Rate</h4>
+                    <p>18.5%</p>
+                </div>
+
             </div>
 
-            <div class="table-card" style="margin-top: 24px;">
-                <h3>Agent-wise Performance</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Agent Name</th>
-                            <th>Leads</th>
-                            <th>Visits</th>
-                            <th>Deals Closed</th>
-                            <th>Commission</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Amit</td>
-                            <td>15</td>
-                            <td>10</td>
-                            <td>6</td>
-                            <td>$3000</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- AGENT PERFORMANCE -->
+            <h2 class="section-title" style="margin-top: 40px;">Agent <span>Performance</span></h2>
+
+            <div class="property-grid">
+
+                <!-- AGENT 1 -->
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Amit Kumar</h3>
+                        <span class="badge badge-blue">Top Performer</span>
+                    </div>
+                    <div class="report-body">
+                        <p>Leads Generated: 48</p>
+                        <p>Deals Closed: 6</p>
+                        <p>Total Revenue: ₹6.2 Cr</p>
+                        <p>Commission Earned: ₹12.4 L</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AGENT 2 -->
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Sneha Patil</h3>
+                        <span class="badge badge-purple">Excellent</span>
+                    </div>
+                    <div class="report-body">
+                        <p>Leads Generated: 42</p>
+                        <p>Deals Closed: 4</p>
+                        <p>Total Revenue: ₹4.8 Cr</p>
+                        <p>Commission Earned: ₹9.6 L</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AGENT 3 -->
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Rohit Deshmukh</h3>
+                        <span class="badge badge-green">Good</span>
+                    </div>
+                    <div class="report-body">
+                        <p>Leads Generated: 35</p>
+                        <p>Deals Closed: 3</p>
+                        <p>Total Revenue: ₹3.1 Cr</p>
+                        <p>Commission Earned: ₹6.2 L</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AGENT 4 -->
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Priya Sharma</h3>
+                        <span class="badge badge-green">Good</span>
+                    </div>
+                    <div class="report-body">
+                        <p>Leads Generated: 30</p>
+                        <p>Deals Closed: 2</p>
+                        <p>Total Revenue: ₹2.8 Cr</p>
+                        <p>Commission Earned: ₹5.6 L</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-    <script src="./script.js"></script>
 </body>
 </html>

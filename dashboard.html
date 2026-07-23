@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,103 +7,75 @@
     <title>EstateCRM | Dashboard</title>
 
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
 
     <div class="layout">
 
-        <!-- ========================================
-             SIDEBAR
-        ========================================= -->
+        <!-- SIDEBAR -->
         <aside class="sidebar">
-            
-            <div class="brand"> 
-                EstateCRM
-            </div>
-
+            <div class="brand">EstateCRM</div>
             <nav class="nav">
-                <a href="dashboard.html" class="nav-link active"> 
-                    Dashboard
-                </a>
-                <a href="properties.html" class="nav-link"> 
-                    Properties
-                </a>
-                <a href="add-property.html" class="nav-link"> 
-                    Add Property
-                </a>
-                <a href="leads.html" class="nav-link"> 
-                    Leads
-                </a>
-                <a href="deals.html" class="nav-link"> 
-                    Deals
-                </a>
-                <a href="reports.html" class="nav-link"> 
-                    Reports
-                </a>
-                <a href="index.html" class="nav-link"> 
-                    Client Portal
-                </a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="properties.html" class="nav-link">Properties</a>
+                <a href="add-property.html" class="nav-link">Add Property</a>
+                <a href="leads.html" class="nav-link">Leads</a>
+                <a href="deals.html" class="nav-link">Deals</a>
+                <a href="reports.html" class="nav-link">Reports</a>
+                <a href="index.html" class="nav-link">Client Portal</a>
             </nav>
-
         </aside>
 
-        <!-- ========================================
-             MAIN CONTENT
-        ========================================= -->
+        <!-- MAIN CONTENT -->
         <div class="content">
             
             <header class="topbar">
-                <h1>Welcome, Admin 👋</h1>
+                <h1>Welcome Back, Admin</h1>
+                <p>Here is your business overview for this month</p>
             </header>
 
-            <!-- ========================================
-                 STATS CARDS
-            ========================================= -->
+            <!-- KEY STATS - ONLY 3 CARDS -->
             <div class="stat-grid">
                 
                 <div class="stat-card blue">
                     <h4>Total Active Leads</h4>
-                    <p id="sLeads">24</p>
-                    <span class="stat-change up">↑ 12%</span>
+                    <p>24</p>
+                    <span class="stat-change up">Increase 12%</span>
                 </div>
 
                 <div class="stat-card green">
                     <h4>Deals Closed This Month</h4>
-                    <p id="sDeals">12</p>
-                    <span class="stat-change up">↑ 4</span>
+                    <p>12</p>
+                    <span class="stat-change up">Increase 4</span>
                 </div>
 
                 <div class="stat-card purple">
                     <h4>Total Revenue</h4>
                     <p>₹18.5 Cr</p>
-                    <span class="stat-change up">↑ 22%</span>
+                    <span class="stat-change up">Increase 22%</span>
                 </div>
 
             </div>
 
-            <!-- ========================================
-                 CHART
-            ========================================= -->
+            <!-- CHART SECTION -->
             <div class="card">
-                <h3>Sales Pipeline</h3>
-                <canvas id="pipelineChart" style="margin-top: 20px;"></canvas>
+                <h3>Sales Pipeline Overview</h3>
+                <canvas id="pipelineChart" style="margin-top: 20px; height: 300px;"></canvas>
             </div>
 
-            <!-- ========================================
-                 2 COLUMN: DEALS + TOP AGENTS
-            ========================================= -->
+            <!-- RECENT ACTIVITY GRID -->
             <div class="grid-2col">
 
-                <!-- RECENT DEALS CLOSED -->
+                <!-- RECENT DEALS -->
                 <div class="card">
                     <h3>Recent Deals Closed</h3>
-
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Client</th>
+                                <th>Client Name</th>
+                                <th>Property</th>
                                 <th>Amount</th>
                                 <th>Status</th>
                             </tr>
@@ -112,24 +83,21 @@
                         <tbody>
                             <tr>
                                 <td>Rahul Verma</td>
-                                <td>₹2.0 Cr</td>
-                                <td>
-                                    <span class="badge badge-green">Closed</span>
-                                </td>
+                                <td>Luxury 3BHK Villa</td>
+                                <td>₹1.85 Cr</td>
+                                <td><span class="badge badge-green">Closed</span></td>
                             </tr>
                             <tr>
                                 <td>Neha Singh</td>
-                                <td>₹85 L</td>
-                                <td>
-                                    <span class="badge badge-green">Closed</span>
-                                </td>
+                                <td>Modern 2BHK Flat</td>
+                                <td>₹95 L</td>
+                                <td><span class="badge badge-green">Closed</span></td>
                             </tr>
                             <tr>
-                                <td>Karan Mehta</td>
-                                <td>₹40 L</td>
-                                <td>
-                                    <span class="badge badge-green">Closed</span>
-                                </td>
+                                <td>Amit Kumar</td>
+                                <td>4BHK Penthouse</td>
+                                <td>₹3.2 Cr</td>
+                                <td><span class="badge badge-green">Closed</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -138,12 +106,13 @@
                 <!-- TOP AGENTS -->
                 <div class="card">
                     <h3>Top Performing Agents</h3>
-
                     <div class="agent-list">
+                        
                         <div class="agent-item">
                             <div>
                                 <h5>1. Amit Kumar</h5>
-                                <p>5 Deals • ₹6.2 Cr</p>
+                                <p>6 Deals Closed</p>
+                                <p>Revenue: ₹6.2 Cr</p>
                             </div>
                             <span class="badge badge-blue">Top</span>
                         </div>
@@ -151,53 +120,52 @@
                         <div class="agent-item">
                             <div>
                                 <h5>2. Sneha Patil</h5>
-                                <p>4 Deals • ₹4.8 Cr</p>
+                                <p>4 Deals Closed</p>
+                                <p>Revenue: ₹4.8 Cr</p>
                             </div>
                         </div>
 
                         <div class="agent-item">
                             <div>
-                                <h5>3. Rohit Jain</h5>
-                                <p>3 Deals • ₹3.1 Cr</p>
+                                <h5>3. Rohit Deshmukh</h5>
+                                <p>3 Deals Closed</p>
+                                <p>Revenue: ₹3.1 Cr</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
-            </div>
-
-            <!-- ========================================
-                 RECENT ACTIVITY
-            ========================================= -->
-            <div class="card">
-                <h3>Recent Activity</h3>
-
-                <div class="activity-list">
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>New Lead:</b> Priya Sharma added. Budget: ₹1Cr</p>
-                        <span class="time">2 min ago</span>
-                    </div>
-
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Site Visit:</b> Amit booked visit for 3BHK Pune</p>
-                        <span class="time">1 hour ago</span>
-                    </div>
-
-                    <div class="activity-item">
-                        <span class="activity-dot"></span>
-                        <p><b>Deal Closed:</b> Rahul's Office Space deal closed</p>
-                        <span class="time">Today</span>
-                    </div>
-                </div>
             </div>
 
         </div>
 
     </div>
 
-    <script src="./script.js"></script>
+    <!-- CHART SCRIPT -->
+    <script>
+        const ctx = document.getElementById('pipelineChart').getContext('2d');
+        const pipelineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['New Leads', 'Site Visits', 'Negotiation', 'Closed Deals'],
+                datasets: [{
+                    label: 'Count',
+                    data: [24, 18, 14, 12],
+                    backgroundColor: ['#3b82f6', '#8b5cf6', '#f59e0b', '#10b981'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -3,41 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EstateCRM | About</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>EstateCRM | About Us</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo"> EstateCRM</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="listings.html">Listings</a>
-            <a href="about.html" class="active">About</a>
-            <a href="login.html">Admin</a>
-        </nav>
-        <a href="login.html" class="btn btn-primary">Admin Panel</a>
-    </header>
+    <div class="layout">
 
-    <div class="page-header">
-        <h2>Why Choose EstateCRM</h2>
-    </div>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">EstateCRM</div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="properties.html" class="nav-link">Properties</a>
+                <a href="add-property.html" class="nav-link">Add Property</a>
+                <a href="leads.html" class="nav-link">Leads</a>
+                <a href="deals.html" class="nav-link">Deals</a>
+                <a href="reports.html" class="nav-link">Reports</a>
+                <a href="about.html" class="nav-link active">About CRM</a>
+                <a href="index.html" class="nav-link">Client Portal</a>
+            </nav>
+        </aside>
 
-    <div class="why-us">
-        <div class="why-text">
-            <p>We help real estate agents and property dealers manage everything in one place.</p>
-            <ul>
-                <li>✓ Organized property and client data</li>
-                <li>✓ Automated follow-up reminders</li>
-                <li>✓ Site visit scheduling</li>
-                <li>✓ Agent performance tracking</li>
-                <li>✓ Client portal for buyers</li>
-            </ul>
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            
+            <header class="topbar">
+                <h1>About EstateCRM</h1>
+            </header>
+
+            <!-- HERO ABOUT -->
+            <div class="about-hero">
+                <div class="about-hero-text">
+                    <h2>Built For Modern <span>Real Estate Teams</span></h2>
+                    <p>
+                        EstateCRM is a complete property management platform designed for real estate agents, 
+                        builders and brokers. Manage properties, leads, deals and reports from one place.
+                    </p>
+                    <a href="properties.html" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="about-hero-img">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000" alt="Real Estate CRM">
+                </div>
+            </div>
+
+            <!-- MISSION VISION -->
+            <div class="grid-2col" style="margin-top: 50px;">
+                
+                <div class="about-box">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To simplify real estate business operations with technology. 
+                        We help agents close more deals faster with better lead tracking and property management.
+                    </p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become India’s most trusted real estate CRM platform that connects 
+                        buyers, sellers and agents with transparency and efficiency.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- KEY FEATURES -->
+            <h2 class="section-title" style="margin-top: 60px;">Why Choose <span>EstateCRM</span></h2>
+
+            <div class="grid-3">
+                
+                <div class="feature-box-light">
+                    <h4>Property Management</h4>
+                    <p>Add, edit and track unlimited properties with images, price and status.</p>
+                </div>
+
+                <div class="feature-box-light">
+                    <h4>Lead Tracking</h4>
+                    <p>Capture leads and link them directly to properties. Never lose a client.</p>
+                </div>
+
+                <div class="feature-box-light">
+                    <h4>Deal Pipeline</h4>
+                    <p>Track every deal from inquiry to closure. Monitor revenue in real time.</p>
+                </div>
+
+                <div class="feature-box-light">
+                    <h4>Agent Reports</h4>
+                    <p>See which agent is performing best with detailed analytics and reports.</p>
+                </div>
+
+                <div class="feature-box-light">
+                    <h4>Client Portal</h4>
+                    <p>Give your clients access to view properties and book site visits online.</p>
+                </div>
+
+                <div class="feature-box-light">
+                    <h4>100% Secure</h4>
+                    <p>All your data is safe and backed up. Access from anywhere, anytime.</p>
+                </div>
+
+            </div>
+
+            <!-- STATS -->
+            <div class="stat-grid" style="margin-top: 60px;">
+                
+                <div class="stat-card blue">
+                    <h4>Active Users</h4>
+                    <p>500+</p>
+                </div>
+
+                <div class="stat-card green">
+                    <h4>Properties Managed</h4>
+                    <p>15,000+</p>
+                </div>
+
+                <div class="stat-card purple">
+                    <h4>Deals Closed</h4>
+                    <p>8,200+</p>
+                </div>
+
+            </div>
+
         </div>
-        <div class="why-img">
-            <img src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=600" alt="Office">
-        </div>
+
     </div>
 
 </body>
